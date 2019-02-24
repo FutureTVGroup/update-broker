@@ -1,9 +1,8 @@
 # Update Broker: Using locksmithd on Ubuntu (and other Debian derived distributions)
 
-[locksmithd](https://github.com/coreos/locksmithd) is a very useful tool for coordinating reboots among a fleet of machines. By default, it's use is limited to CoreOS Container Linux. **update-broker** facilitates using locksmithd on Ubuntu or other Debian derived distributions.
+[![Build Status](https://dev.azure.com/glaux/update-broker/_apis/build/status/ngrewe.update-broker?branchName=master)](https://dev.azure.com/glaux/update-broker/_build/latest?definitionId=1&branchName=master)
 
-update-broker is a small daemon that allows the apt package manager to provide notifications
-similar to CoreOS' [update\_engine](https://github.com/coreos/update_engine). It works by monitoring the existence of the file `/var/run/reboot-required` and
+[locksmithd](https://github.com/coreos/locksmithd) is a very useful tool for coordinating reboots among a fleet of machines. By default, its use is limited to CoreOS Container Linux, where it integrates tightly with [update\_engine](https://github.com/coreos/update_engine). **update-broker** is small daemon that allows the apt package manager to provide notifications that would usually be provided by update\_engine. It works by monitoring the existence of the file `/var/run/reboot-required` and
 notifying locksmithd when it is created.
 
 ## Installation
